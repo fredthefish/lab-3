@@ -1,6 +1,6 @@
 # 03_ArrayList_hierarchy
 
-* Firs Name:
-* Last Name:
-* Period:
-* Github username:
+* First Name: Andrei
+* Last Name:  Karlin
+* Period: 3
+* Github username: fredthefish
