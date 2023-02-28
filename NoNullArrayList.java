@@ -1,26 +1,27 @@
-import java.util.ArrayList
+import java.util.ArrayList;
+import java.lang.IllegalArgumentException;
 
 public class NoNullArrayList<T> extends ArrayList<T> {
-  NoNullArrayList<T>() {
-    super<T>()
+  NoNullArrayList() {
+    super();
   }
-  NoNullArrayList<T>(int initialCapacity) {
-    super<T>(initialCapacity)
+  NoNullArrayList(int initialCapacity) {
+    super(initialCapacity);
   }
   
-  public void add(T object) {
+  public boolean add(T object) {
     if (object == null) 
-      return IllegalArgumentException
-    super.add(object)
+      throw new IllegalArgumentException();
+    return super.add(object);
   }
-  public bool add(T object, int index) {
+  public void add(int index, T object) {
     if (object == null) 
-      return IllegalArgumentException
-    return super.add(object, index)
+      throw new IllegalArgumentException();
+    super.add(index, object);
   }
-  public T set(T object, int index) {
-    if (object == null) 
-      return IllegalArgumentException
-    return super.set(object, index)
+  public T set(int index, T object) {
+    if (object == null)
+      throw new IllegalArgumentException();
+    return super.set(index, object);
   }
 }
