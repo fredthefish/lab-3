@@ -6,12 +6,16 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
         super(initialCapacity);
     }
     public boolean add(T object) {
-        for(int i = 0; i < this.length; i++) {
-            if (object.compareTo(get(i)) > 0) {
+        if (object == null) 
+            throw new IllegalArgumentException(); //This is redundant, but I have to do this to avoid the NullPointerException.
+        for(int i = 0; i < super.size(); i++) {
+            if (get(i).compareTo(object) >= 0) {
                 super.add(i, object);
                 return true;
             }
         }
+        super.add(object);
+        return true;
     }
     public void add(int index, T object) {
         add(object); //The index doesn't matter.
